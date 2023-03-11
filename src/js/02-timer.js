@@ -2,6 +2,8 @@ import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
+let timeInterval = null;
+
 const options = {
   enableTime: true,
   time_24hr: true,
@@ -40,7 +42,9 @@ function isDateValid(selectedDates) {
 
 function updateTimer(selectedDates) {
   refs.button.addEventListener('click', () => {
-    setInterval(() => {
+    refs.button.disabled = true;
+
+    timeInterval = setInterval(() => {
       const selectedDateMs = selectedDates[0];
       const currentDateMs = new Date();
       const delta = selectedDateMs - currentDateMs;
@@ -49,6 +53,15 @@ function updateTimer(selectedDates) {
       console.log(convertMs(delta));
 
       setTimerTextContent(delta);
+
+      if (
+        convertMs(delta).days === 0 &&
+        convertMs(delta).hours === 0 &&
+        convertMs(delta).minutes === 0 &&
+        convertMs(delta).seconds === 0
+      ) {
+        clearInterval(timeInterval);
+      }
     }, 1000);
   });
 }
