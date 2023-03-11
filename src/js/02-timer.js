@@ -18,12 +18,17 @@ flatpickr("input[type = 'text']", options);
 
 const refs = {
   button: document.querySelector('button'),
+  seconds: document.querySelector('span[data-seconds]'),
+  minutes: document.querySelector('span[data-minutes]'),
+  hours: document.querySelector('span[data-hours]'),
+  days: document.querySelector('span[data-days]'),
 };
 
 refs.button.disabled = true;
 
 function isDateValid(selectedDates) {
   if (selectedDates[0] <= new Date()) {
+    refs.button.disabled = true;
     return Notify.failure('Please choose a date in the future');
   } else {
     refs.button.disabled = false;
