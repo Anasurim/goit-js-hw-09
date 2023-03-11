@@ -9,6 +9,7 @@ const options = {
   time_24hr: true,
   defaultDate: new Date(),
   minuteIncrement: 1,
+  disableMobile: true,
   onClose(selectedDates) {
     console.log(selectedDates[0]);
 
@@ -22,6 +23,7 @@ flatpickr("input[type = 'text']", options);
 
 const refs = {
   button: document.querySelector('button'),
+  input: document.querySelector('input'),
   seconds: document.querySelector('span[data-seconds]'),
   minutes: document.querySelector('span[data-minutes]'),
   hours: document.querySelector('span[data-hours]'),
@@ -43,6 +45,7 @@ function isDateValid(selectedDates) {
 function updateTimer(selectedDates) {
   refs.button.addEventListener('click', () => {
     refs.button.disabled = true;
+    refs.input.disabled = true;
 
     timeInterval = setInterval(() => {
       const selectedDateMs = selectedDates[0];
