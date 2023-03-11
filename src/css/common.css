@@ -16,3 +16,36 @@ img {
   display: block;
   max-width: 100%;
 }
+
+.timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.timer .field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 1rem;
+}
+
+.timer .field .value {
+  font-size: 2rem;
+  line-height: 1;
+  text-align: center;
+  color: #fff;
+  background-color: #333;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+}
+
+.timer .field .label {
+  font-size: 0.75rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: #aaa;
+  margin-top: 0.5rem;
+}
