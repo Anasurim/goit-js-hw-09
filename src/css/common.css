@@ -49,3 +49,42 @@ img {
   color: #aaa;
   margin-top: 0.5rem;
 }
+
+/* task 3 style */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+input[type='number'] {
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 5px;
+  font-size: 16px;
+}
+
+button[type='submit'] {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button[type='submit']:hover {
+  background-color: #3e8e41;
+}
