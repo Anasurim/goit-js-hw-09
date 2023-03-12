@@ -51,9 +51,6 @@ function updateTimer(selectedDates) {
       const selectedDateMs = selectedDates[0];
       const currentDateMs = new Date();
       const delta = selectedDateMs - currentDateMs;
-      convertMs(delta);
-
-      console.log(convertMs(delta));
 
       setTimerTextContent(delta);
 
